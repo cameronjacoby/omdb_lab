@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movie List</title>
+    <link rel="stylesheet" href="/styles/normalize.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="shortcut icon" href="/images/favicon.png" />
+  </head>
+  <body>
+    <h1>Movies to Watch Later</h1>
+    <table>
+      <td>
+          <% savedMovies.forEach(function(movie) { %>
+            <p><a href="movie/quick/<%= movie.imdbID %>"><%= movie.Title %></a></p>
+          <% }) %>
+      </td>
+    </table>
+    <p id="search_link"><a href="/">back to search</a></p>
+  </body>
+</html>

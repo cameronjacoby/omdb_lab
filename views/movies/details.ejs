@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= movie.Title %></title>
+    <link rel="stylesheet" href="/styles/normalize.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="shortcut icon" href="/images/favicon.png" />
+  </head>
+  <body>
+    <table>
+      <td><img src="<%= movie.Poster %>" /></td>
+      <td>
+        <p>Title: <%= movie.Title %></p>
+        <p>Year: <%= movie.Year %></p>
+        <p>Rated: <%= movie.Rated %></p>
+        <p>Released: <%= movie.Released %></p>
+        <p>Runtime: <%= movie.Runtime  %></p>
+        <p>Genre: <%= movie.Genre %></p>
+        <p>Director: <%= movie.Director %></p>
+        <p>Writer: <%= movie.Writer %></p>
+        <p>Actors: <%= movie.Actors %></p>
+        <p>Plot: <%= movie.Plot %></p>
+        <p>Language: <%= movie.Language %></p>
+        <p>Country: <%= movie.Country %></p>
+        <p>Awards: <%= movie.Awards %></p>
+        <p>imdbRating: <%= movie.imdbRating %></p>
+        <p>imdbVotes: <%= movie.imdbVotes %></p>
+        <p>Type: <%= movie.Type %></p>
+        <form method="post" action="/watch-later/">
+          <input type="hidden" name="movie[imdbID]" value="<%= movie.imdbID %>">
+          <button name="movie[Title]" value="<%= movie.Title %>">Watch Later</button>
+        </form>
+        <p id="search"><a href="/">back to search</a></p>
+      </td>
+    </table>
+  </body>
+</html>
+
+
+
+
+
+

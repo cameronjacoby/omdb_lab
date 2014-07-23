@@ -1,0 +1,27 @@
+{
+  "name": "omdb_lab",
+  "version": "0.0.0",
+  "description": "We'll be continuing our Movie app from this morning. At first, you created a 2 routes, one to search for a movie, and one to show movie search results.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cameronjacoby/omdb_lab.git"
+  },
+  "author": "Cameron Jacoby",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cameronjacoby/omdb_lab/issues"
+  },
+  "homepage": "https://github.com/cameronjacoby/omdb_lab",
+  "dependencies": {
+    "body-parser": "^1.5.0",
+    "bootstrap": "^3.2.0",
+    "ejs": "^1.0.0",
+    "express": "^4.6.1",
+    "method-override": "^2.1.2",
+    "request": "^2.38.0"
+  }
+}
