@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Movie Search Results</title>
-    <link rel="stylesheet" href="/styles/normalize.css">
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="shortcut icon" href="/images/favicon.png" />
-  </head>
-  <body>
-    <h1>Search Results</h1>
-    <table>
+<% include ../partials/header %>
+
+  <h1>Search Results</h1>
+  <table id="results_table">
     <td>
-        <% movieList.forEach(function(movie) { %>
-          <p><a href="movie/<%= movie.imdbID %>"><%= movie.Title %></a>: <%= movie.Year + ", " + movie.Type %></p>
-        <% }) %>
+      <% movieList.forEach(function(movie) { %>
+        <p><a href="movie/<%= movie.imdbID %>"><%= movie.Title %></a>: <%= movie.Year + ", " + movie.Type %></p>
+      <% }) %>
     </td>
-    </table>
-    <p id="search_link"><a href="/">back to search</a></p>
-  </body>
-</html>
+
+<% include ../partials/footer %>

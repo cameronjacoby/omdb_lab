@@ -1,20 +1,18 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Movie List</title>
-    <link rel="stylesheet" href="/styles/normalize.css">
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="shortcut icon" href="/images/favicon.png" />
-  </head>
-  <body>
-    <h1>Movies to Watch Later</h1>
-    <table>
-      <td>
-          <% savedMovies.forEach(function(movie) { %>
-            <p><a href="movie/quick/<%= movie.imdbID %>"><%= movie.Title %></a></p>
-          <% }) %>
-      </td>
-    </table>
-    <p id="search_link"><a href="/">back to search</a></p>
-  </body>
-</html>
+<% include ../partials/header %>
+
+  <h1>Watch List</h1>
+  <table id="list_table">
+    <% savedMovies.forEach(function(movie) { %>
+      <tr>
+        <td>
+          <a href="movie/<%= movie.imdbID %>"><%= movie.Title %></a>
+        </td>
+        <td>
+          <form method="post" action="/movie/<%= movie.imdbID %>?_method=delete">
+            <button>Delete</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+
+<% include ../partials/footer %>

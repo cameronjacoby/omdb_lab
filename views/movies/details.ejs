@@ -1,42 +1,39 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= movie.Title %></title>
-    <link rel="stylesheet" href="/styles/normalize.css">
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="shortcut icon" href="/images/favicon.png" />
-  </head>
-  <body>
-    <table>
-      <td><img src="<%= movie.Poster %>" /></td>
+<% include ../partials/header %>
+
+    <table id="movie_details">
+      <% if (movie.Poster !== "N/A") { %>
+        <td><img src="<%= movie.Poster %>" /></td>
+      <% } %>
       <td>
-        <p>Title: <%= movie.Title %></p>
-        <p>Year: <%= movie.Year %></p>
-        <p>Rated: <%= movie.Rated %></p>
-        <p>Released: <%= movie.Released %></p>
-        <p>Runtime: <%= movie.Runtime  %></p>
-        <p>Genre: <%= movie.Genre %></p>
-        <p>Director: <%= movie.Director %></p>
-        <p>Writer: <%= movie.Writer %></p>
-        <p>Actors: <%= movie.Actors %></p>
-        <p>Plot: <%= movie.Plot %></p>
-        <p>Language: <%= movie.Language %></p>
-        <p>Country: <%= movie.Country %></p>
-        <p>Awards: <%= movie.Awards %></p>
-        <p>imdbRating: <%= movie.imdbRating %></p>
-        <p>imdbVotes: <%= movie.imdbVotes %></p>
-        <p>Type: <%= movie.Type %></p>
+        <h1><%= movie.Title %></h1>
+        <p><strong>Genre:</strong> <%= movie.Genre %></p>
+        <p><strong>Director:</strong> <%= movie.Director %></p>
+        <p><strong>Writer:</strong> <%= movie.Writer %></p>
+        <p><strong>Actors:</strong> <%= movie.Actors %></p>
+        <p><em><%= movie.Plot %></em></p>
+        <ul>
+          <li><strong>Year:</strong> <%= movie.Year %></li>
+          <li><strong>Rated:</strong> <%= movie.Rated %></li>
+          <li><strong>Released:</strong> <%= movie.Released %></li>
+          <li><strong>Runtime:</strong> <%= movie.Runtime %></li>
+          <li><strong>Language:</strong> <%= movie.Language %></li>
+          <li><strong>Country:</strong> <%= movie.Country %></li>
+          <li><strong>Awards:</strong> <%= movie.Awards %></li>
+          <li><strong>imdbRating:</strong> <%= movie.imdbRating %></li>
+          <li><strong>imdbVotes:</strong> <%= movie.imdbVotes %></li>
+          <li><strong>Type:</strong> <%= movie.Type %></li>
+        </ul>
         <form method="post" action="/watch-later/">
           <input type="hidden" name="movie[imdbID]" value="<%= movie.imdbID %>">
-          <button name="movie[Title]" value="<%= movie.Title %>">Watch Later</button>
+          <input type="hidden" name="movie[Title]" value="<%= movie.Title %>">
+          <button>Watch Later</button>
         </form>
-        <p id="search"><a href="/">back to search</a></p>
+        <div id="search"><a href="/">Back to Search</a></div>
+        <div id="list"><a href="/watch-later">Go to Watch List</a></div>
       </td>
     </table>
   </body>
 </html>
-
-
 
 
 

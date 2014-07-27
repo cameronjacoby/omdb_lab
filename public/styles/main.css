@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700,800);
 
 body {
   margin: 40px auto;
@@ -19,7 +19,7 @@ input {
 #search_term {
   border-bottom: 1px dotted #53777A;
   width: 200px;
-  font-size: 16px;
+  font-size: 18px;
   color: #542437;
 }
 
@@ -29,6 +29,8 @@ input {
   padding: 5px;
   background-color: #DFDFDF;
   color: #542437;
+  width: 80px;
+  border-radius: 20px;
 }
 
 a {
@@ -37,16 +39,12 @@ a {
   font-weight: 700;
 }
 
-#list_link a, #search_link a, #search a {
-  color: #53777A;
-}
-
 form {
   margin: 40px;
 }
 
 img {
-  max-width: 300px;
+  height: 460px;
 }
 
 table {
@@ -55,26 +53,82 @@ table {
   text-align: left;
 }
 
-td form {
+#movie_details h1, #movie_details p {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+#movie_details h1 {
+  font-size: 20px;
+}
+
+#movie_details p {
+  font-size: 14px;
+}
+
+#movie_details ul {
+  padding-left: 40px;
+  font-size: 14px;
+}
+
+button, #search, #list {
+  border: none;
+  outline: none;
+  background-color: #6B8A8C;
+  color: white;
+  width: 110px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 300;
+  border-radius: 20px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#movie_details form {
   margin: 0;
+  margin-top: 10px;
   padding-top: 5px;
   padding-left: 20px;
 }
 
-td p {
-  padding-left: 20px;
+#search, #list {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 12px;
 }
 
-#search {
-  margin-top: 5px;
-  margin-left: -10px;
+#search a, #list a {
+  color: white;
+  font-size: 12px;
+  font-weight: 300;
 }
 
-.details {
-  max-width: 300px;
+#list_table form {
+  margin: 0;
+  margin-left: 20px;
 }
 
-a {
-  margin-left: 10px;
-  margin-right: 10px;
+#list_table button {
+  width: 60px;
 }
+
+#list_table tr {
+  height: 40px;
+}
+
+#results_table p {
+  margin-top: 10px;
+}
+
+#search_link, #list_link {
+  text-decoration: underline;
+}
+
+#search_link a, #list_link a {
+  color: #53777A;
+}
+
+
+
+

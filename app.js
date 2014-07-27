@@ -34,7 +34,7 @@ app.get('/movie/:id', function(req, res) {
   request(url, function(error, response, body) {
     if (!error) {
       var data = JSON.parse(body);
-      res.render('movies/details.ejs', {movie: data});
+      res.render('movies/details', {movie: data});
     }
   });
 });
@@ -50,18 +50,19 @@ app.post('/watch-later', function(req, res) {
   res.redirect('/watch-later');
 });
 
-app.get('/movie/quick/:id', function(req, res) {
+app.get('/movie/:id', function(req, res) {
   var movieID = req.params.id;
   var url = 'http://www.omdbapi.com/?i=' + movieID;
   request(url, function(error, response, body) {
     if (!error) {
       var data = JSON.parse(body);
-      res.render('movies/quick_details.ejs', {movie: data});
+      res.render('movies/details', {movie: data});
     }
   });
 });
 
-app.delete('/movie/quick/:id', function(req, res){
+app.delete('/movie/:id', function(req, res){
+  console.log(req.params.id);
   var movieID = Number(req.params.id);
   var movieIndex;
   savedMovies.forEach(function(movie, index){
@@ -76,23 +77,6 @@ app.delete('/movie/quick/:id', function(req, res){
 app.listen(3000, function() {
   console.log('server started on localhost:3000');
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
