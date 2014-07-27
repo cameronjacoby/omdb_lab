@@ -47,10 +47,11 @@ app.get('/watch-later', function(req, res) {
 
 app.post('/watch-later', function(req, res) {
   savedMovies.push(req.body.movie);
+  console.log(savedMovies);
   res.redirect('/watch-later');
 });
 
-app.get('/movie/:id', function(req, res) {
+app.get('/watch-later/:id', function(req, res) {
   var movieID = req.params.id;
   var url = 'http://www.omdbapi.com/?i=' + movieID;
   request(url, function(error, response, body) {
@@ -61,12 +62,10 @@ app.get('/movie/:id', function(req, res) {
   });
 });
 
-app.delete('/movie/:id', function(req, res){
-  console.log(req.params.id);
-  var movieID = Number(req.params.id);
+app.delete('/watch-later/:id', function(req, res){
   var movieIndex;
-  savedMovies.forEach(function(movie, index){
-     if(movie.imdbID === movieID) {
+  savedMovies.forEach(function(movie, index) {
+     if(movie.imdbID === req.params.id) {
        movieIndex = index;
      }
   });
