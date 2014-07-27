@@ -24,3 +24,30 @@ The next steps in this app is create a movie detail page, and an ability to save
 ##Bonus
 * Have an option to remove the movie from the watch later list
 * Try to incorporate Bootstrap, Foundation to utilize some of their components or css grids.
+
+
+--------------------
+
+### Completed project:
+
+#### Search Page
+
+![ScreenShot](/public/images/screenshot_search.png)
+
+#### Results Page
+
+![ScreenShot](/public/images/screenshot_results.png)
+
+#### Movie Details Page
+
+![ScreenShot](/public/images/screenshot_details.png)
+
+#### Watch List Page
+
+![ScreenShot](/public/images/screenshot_list.png)
+
+
+
+
+
+
